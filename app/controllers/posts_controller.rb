@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with :name => "todor", :password => "secret", :except => [:index, :show]
+  before_filter :authenticate_user!
 
   # GET /posts
   # GET /posts.json
